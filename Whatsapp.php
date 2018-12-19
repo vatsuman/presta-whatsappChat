@@ -90,17 +90,17 @@ class Whatsapp extends Module
             $validateInt=Validate::isInt($shareThis);
             $validateCleanHTML=Validate::isCleanHtml($shareMessage);
             if ($validatePone && $validateCountry && $validateInt && $validateCleanHTML) {
-                Db::getInstance()->update('Whatsapp', array(
+                Db::getInstance()->update('whatsapp', array(
                 'telefon' => pSQL($telefon),
                 'shareThis' => (int) $shareThis,
                 'shareMessage' => pSQL($shareMessage),
                 'hook' => pSQL($shook),
-                    ), 'id_Whatsapp = 1');
+                    ), 'id_whatsapp = 1');
                 $add = 1;
             }
         }
         $iso_code = $this->context->language->iso_code;
-        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'Whatsapp WHERE id_Whatsapp = 1');
+        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'whatsapp WHERE id_whatsapp = 1');
         $whatasppno = $no['telefon'];
         $hook = $no['hook'];
         $shareThis = $no['shareThis'];
@@ -135,16 +135,16 @@ class Whatsapp extends Module
      */
     public function hookHeader()
     {
-        $this->context->controller->addJS($this->_path . '/views/js/Whatsapp.js');
-        $this->context->controller->addCSS($this->_path . '/views/css/Whatsapp.css');
+        $this->context->controller->addJS($this->_path . '/views/js/whatsapp.js');
+        $this->context->controller->addCSS($this->_path . '/views/css/whatsapp.css');
     }
 
-    public function Whatsapp($params)
+    public function whatsapp($params)
     {
         $detect = new Mobile_Detect;
         $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 
-        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'Whatsapp WHERE id_Whatsapp = 1');
+        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'whatsapp WHERE id_whatsapp = 1');
         $whatasppno = $no['telefon'];
         $hook = $no['hook'];
         $shareThis = $no['shareThis'];
@@ -175,28 +175,28 @@ class Whatsapp extends Module
 
     public function hookDisplayFooter($params)
     {
-        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'Whatsapp WHERE id_Whatsapp = 1');
+        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'whatsapp WHERE id_whatsapp = 1');
         $hook = $no['hook'];
         if ($hook == 'footer') {
-            return $this->Whatsapp($params);
+            return $this->whatsapp($params);
         }
     }
 
     public function hookLeftColumn($params)
     {
-        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'Whatsapp WHERE id_Whatsapp = 1');
+        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'whatsapp WHERE id_whatsapp = 1');
         $hook = $no['hook'];
         if (isset($hook) and ($hook == 'leftColumn')) {
-            return $this->Whatsapp($params);
+            return $this->whatsapp($params);
         }
     }
 
     public function hookRightColumn($params)
     {
-        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'Whatsapp WHERE id_Whatsapp = 1');
+        $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'whatsapp WHERE id_whatsapp = 1');
         $hook = $no['hook'];
         if ($hook == 'rightColumn') {
-            return $this->Whatsapp($params);
+            return $this->whatsapp($params);
         }
     }
 }
