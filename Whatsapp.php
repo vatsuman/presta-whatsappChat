@@ -34,7 +34,7 @@ class Whatsapp extends Module
 
     public function __construct()
     {
-        $this->name = 'Whatsapp';
+        $this->name = 'whatsapp';
         $this->tab = 'administration';
         $this->version = '2.0.0';
         $this->author = 'svats.com';
