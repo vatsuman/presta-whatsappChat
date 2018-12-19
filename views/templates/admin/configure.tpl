@@ -29,57 +29,57 @@ $(function() {
 });
 </script>
 <div class="panel">
-	<h3><i class="icon icon-credit-card"></i> {l s='Whatsapp Number' mod='whatsapp'}</h3>
+	<h3><i class="icon icon-credit-card"></i> {l s='Whatsapp Number' mod='Whatsapp'}</h3>
 	<form class="form-horizontal" enctype="multipart/form-data" action="" method="POST">
 	  <div class="form-group">
-		<label for="input1" class="col-sm-2 control-label">{l s='Tel' mod='whatsapp'}</label>
+		<label for="input1" class="col-sm-2 control-label">{l s='Tel' mod='Whatsapp'}</label>
 		<div class="col-sm-8">
-		  <input type="text" class="form-control" name="telefon" id="input1" value="{$whatasppno|escape:'html':'UTF-8'}" placeholder="{l s='05XXXX' mod='whatsapp'}">
+		  <input type="text" class="form-control" name="telefon" id="input1" value="{$whatasppno|escape:'html':'UTF-8'}" placeholder="{l s='05XXXX' mod='Whatsapp'}">
 			<br />
 		</div>
 		<div class="alert alert-warning col-sm-10 pull-right">
 			{if $lang_iso == 'tr'}
-				&nbsp;{l s='Add contry number not add + eg TURKEY' mod='whatsapp'} : <b>90</b>5XXXX
+				&nbsp;{l s='Add contry number not add + eg TURKEY' mod='Whatsapp'} : <b>90</b>5XXXX
 			{else}
-				&nbsp;{l s='Add contry number not add + eg USA' mod='whatsapp'} : <b>1</b>XXXXX
+				&nbsp;{l s='Add contry number not add + eg USA' mod='Whatsapp'} : <b>1</b>XXXXX
 			{/if}
 		</div>
 	  </div>
 	  <div class="form-group">
-		<label for="shook" class="col-sm-2 control-label">{l s='Select Hook' mod='whatsapp'}</label>
+		<label for="shook" class="col-sm-2 control-label">{l s='Select Hook' mod='Whatsapp'}</label>
 		<div class="col-sm-8">
 		  <select name="shook" id="shook" class="form-control">
-			<option value="footer">{l s='Footer' mod='whatsapp'}</option>
-			<option value="leftColumn">{l s='Left Column' mod='whatsapp'}</option>
-			<option value="rightColumn">{l s='Right Column' mod='whatsapp'}</option>
+			<option value="footer">{l s='Footer' mod='Whatsapp'}</option>
+			<option value="leftColumn">{l s='Left Column' mod='Whatsapp'}</option>
+			<option value="rightColumn">{l s='Right Column' mod='Whatsapp'}</option>
 		  </select>
 		</div>
 	  </div>
 	  <div class="form-group">	
-	  <label for="shareThis" class="col-sm-2 control-label">{l s='Share Product' mod='whatsapp'}</label>
+	  <label for="shareThis" class="col-sm-2 control-label">{l s='Share Product' mod='Whatsapp'}</label>
 		<div class="col-sm-10">
 			<span id="shareThis" class="switch prestashop-switch fixed-width-lg">
 				<input type="radio" name="shareThis" id="CB_on" value="1" checked="checked"/>
-				<label  for="CB_on">{l s='Yes' mod='whatsapp'}</label>
+				<label  for="CB_on">{l s='Yes' mod='Whatsapp'}</label>
 				<input type="radio" name="shareThis" id="CB_off" value="0"/>
-				<label  for="CB_off">{l s='No' mod='whatsapp'}</label>
+				<label  for="CB_off">{l s='No' mod='Whatsapp'}</label>
 				<a class="slide-button btn"></a>
 			</span>
 		</div>
 	  </div>
 	  <div class="form-group">
-		<label for="shareMessage" class="col-sm-2 control-label">{l s='Message' mod='whatsapp'}</label>
+		<label for="shareMessage" class="col-sm-2 control-label">{l s='Message' mod='Whatsapp'}</label>
 		<div class="col-sm-8">
 		  <textarea name="shareMessage" id="shareMessage" class="form-control" cols="30" rows="2">{$shareMessage|escape:'html':'UTF-8'}</textarea>
 		  <br />
 		</div>
 		<div class="alert alert-info col-sm-10 pull-right">
-			&nbsp;{$pyazi|escape:'html':'UTF-8'} = {l s='Product Name' mod='whatsapp'}
+			&nbsp;{$pyazi|escape:'html':'UTF-8'} = {l s='Product Name' mod='Whatsapp'}
 		</div>
 	  </div>
 	  <div class="form-group">
 		<div class="col-sm-offset-2 col-sm-8">
-		  <button type="submit" name="telekle" class="btn btn-default ">{l s='Save or Update' mod='whatsapp'}</button>
+		  <button type="submit" name="telekle" class="btn btn-default ">{l s='Save or Update' mod='Whatsapp'}</button>
 		</div>
 	  </div>
 	</form>
