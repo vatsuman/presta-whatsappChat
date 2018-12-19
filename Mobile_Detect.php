@@ -15,7 +15,7 @@
 
 $context = Context::getContext();
 $isim = Module::getInstanceByName('Whatsapp');
-class Mobile_Detect
+class Mobile_detect
 {
     /**
      * Mobile detection type.

@@ -141,7 +141,7 @@ class Whatsapp extends Module
 
     public function whatsapp($params)
     {
-        $detect = new Mobile_Detect;
+        $detect = new Mobile_detect;
         $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 
         $no = Db::getInstance()->getRow('SELECT * FROM ' . _DB_PREFIX_ . 'whatsapp WHERE id_whatsapp = 1');
