@@ -86,7 +86,8 @@ class whatsapp extends Module
             $shareThis = Tools::getValue('shareThis');
             $shareMessage = Tools::getValue('shareMessage');
 
-            if (Validate::isPhoneNumber($telefon) && Validate::isCountryName($shook) && Validate::isInt($shareThis) && Validate::isCleanHtml($shareMessage)) {
+            if (Validate::isPhoneNumber($telefon) && Validate::isCountryName($shook) && Validate::isInt($shareThis) && Validate::isCleanHtml($shareMessage))
+                {
                 Db::getInstance()->update('whatsapp', array(
                 'telefon' => pSQL($telefon),
                 'shareThis' => (int) $shareThis,
@@ -151,7 +152,8 @@ class whatsapp extends Module
         if (Validate::isCountryName($page) && $page == 'product') {
             $idPr = (int) Tools::getValue('id_product');
             $lang = (int) $params['cookie']->id_lang;
-            $pr = Db::getInstance()->getRow('SELECT * FROM `' . _DB_PREFIX_ . 'product_lang` WHERE id_product = ' . $idPr . ' AND id_lang = ' . $lang . '');
+            $pr = Db::getInstance()->getRow('SELECT * FROM `' . _DB_PREFIX_ . 'product_lang` 
+                                             WHERE id_product = ' . $idPr . ' AND id_lang = ' . $lang . '');
             $name = $pr['name'];
 
             $shareMessage = str_replace("{PRODUCT}", "*" . $name . "*", "{$shareMessage}");
