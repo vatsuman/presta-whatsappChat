@@ -86,8 +86,7 @@ class whatsapp extends Module
             $shareThis = Tools::getValue('shareThis');
             $shareMessage = Tools::getValue('shareMessage');
 
-            if (Validate::isPhoneNumber($telefon) && Validate::isCountryName($shook) && Validate::isInt($shareThis) && Validate::isCleanHtml($shareMessage))
-                {
+            if (Validate::isPhoneNumber($telefon) && Validate::isCountryName($shook) && Validate::isInt($shareThis) && Validate::isCleanHtml($shareMessage)) {
                 Db::getInstance()->update('whatsapp', array(
                 'telefon' => pSQL($telefon),
                 'shareThis' => (int) $shareThis,
