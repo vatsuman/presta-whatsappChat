@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
-    <name>whatsapp</name>
+    <name>Whatsapp</name>
     <displayName><![CDATA[Whatsapp Chat]]></displayName>
     <version><![CDATA[2.0.0]]></version>
     <description><![CDATA[Add your number to whatsapp]]></description>
