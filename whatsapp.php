@@ -112,7 +112,7 @@ class whatsapp extends Module
         'lang_iso' => $iso_code,
         'pyazi' => "{PRODUCT}",
         'add' => $add,
-    ));
+        ));
         return $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl');
     }
 
@@ -165,7 +165,7 @@ class whatsapp extends Module
         'shareMessage' => $shareMessage,
         'whataspp_module_dir' => $this->_path,
         'page_name' =>$page,
-    ));
+        ));
         return $this->context->smarty->fetch($this->local_path . 'views/templates/front/footer.tpl');
     }
 
