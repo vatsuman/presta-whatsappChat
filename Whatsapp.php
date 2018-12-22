@@ -157,8 +157,11 @@ class Whatsapp extends Module
             $pr = Db::getInstance()->getRow('SELECT * FROM `' . _DB_PREFIX_ . 'product_lang` 
                                              WHERE id_product = ' . $idPr . ' AND id_lang = ' . $lang . '');
             $name = $pr['name'];
-
-            $shareMessage = str_replace("{PRODUCT}", "*" . $name . "*", "{$shareMessage}");
+            $product = new Product(Tools::getValue('id_product'));
+            $link = new Link();
+            $url = $link->getProductLink($product);
+            $product_url=$name.'['.$url.']';
+            $shareMessage = str_replace("{PRODUCT}", "*" . $product_url . "*", "{$shareMessage}");
         }
     
         $this->context->smarty->assign(array(
